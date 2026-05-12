@@ -1,0 +1,146 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 20px;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+/* Left group: hamburger + logo side by side */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Logo */
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  padding-top: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: opacity 0.15s;
+  text-align: left;
+}
+.topbar-logo:hover { opacity: 0.8; }
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom:2px;
+  
+}
+
+.logo-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.1;
+  padding-bottom:10px;
+}
+
+/* Steps */
+.topbar-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  transition: background 0.15s;
+}
+
+.step-item:hover:not(:disabled) { background: var(--bg-elevated); }
+.step-item:disabled { cursor: default; }
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.step-item.pending .step-circle {
+  background: var(--bg-overlay);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.step-item.active .step-circle {
+  background: var(--green);
+  color: #0a0f0a;
+}
+
+.step-item.done .step-circle {
+  background: var(--green);
+  color: #0a0f0a;
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.step-item.pending .step-label { color: var(--text-muted); }
+.step-item.active  .step-label { color: var(--text-primary); }
+.step-item.done    .step-label { color: var(--text-secondary); }
+
+/* Connecting line */
+.step-line {
+  width: 40px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.step-line.done { background: var(--green); }
+
+/* ── Hamburger button ─────────────────────────────────────────── */
+.topbar-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: #e0e0e0;
+  transition: background 0.18s, color 0.18s;
+  flex-shrink: 0;
+}
+.topbar-hamburger:hover { background: rgba(255,255,255,0.08); color: #4caf50; }
